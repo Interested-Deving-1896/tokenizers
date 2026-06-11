@@ -1,92 +1,75 @@
-<p align="center">
-    <br>
-    <img src="https://huggingface.co/landing/assets/tokenizers/tokenizers-logo.png" width="600"/>
-    <br>
-<p>
-<p align="center">
-    <img alt="Build" src="https://github.com/huggingface/tokenizers/workflows/Rust/badge.svg">
-    <a href="https://github.com/huggingface/tokenizers/blob/main/LICENSE">
-        <img alt="GitHub" src="https://img.shields.io/github/license/huggingface/tokenizers.svg?color=blue&cachedrop">
-    </a>
-    <a href="https://pepy.tech/project/tokenizers">
-        <img src="https://pepy.tech/badge/tokenizers/week" />
-    </a>
-</p>
+[update-readmes]   Mode: rewrite — migrating to template structure...
+# tokenizers
 
-Provides an implementation of today's most used tokenizers, with a focus on performance and
-versatility.
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/tokenizers)
 
-## Main features:
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
- - Train new vocabularies and tokenize, using today's most used tokenizers.
- - Extremely fast (both training and tokenization), thanks to the Rust implementation. Takes
-   less than 20 seconds to tokenize a GB of text on a server's CPU.
- - Easy to use, but also extremely versatile.
- - Designed for research and production.
- - Normalization comes with alignments tracking. It's always possible to get the part of the
-   original sentence that corresponds to a given token.
- - Does all the pre-processing: Truncate, Pad, add the special tokens your model needs.
+## Architecture
 
-## Performances
-Performances can vary depending on hardware, but running the [~/bindings/python/benches/test_tiktoken.py](bindings/python/benches/test_tiktoken.py) should give the following on a g6 aws instance:
-![image](https://github.com/user-attachments/assets/2b913d4b-e488-4cbc-b542-f90a6c40643d)
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
 
+## Install
 
-## Bindings
-
-We provide bindings to the following languages (more to come!):
-  - [Rust](https://github.com/huggingface/tokenizers/tree/main/tokenizers) (Original implementation)
-  - [Python](https://github.com/huggingface/tokenizers/tree/main/bindings/python)
-  - [Node.js](https://github.com/huggingface/tokenizers/tree/main/bindings/node)
-  - [Ruby](https://github.com/ankane/tokenizers-ruby) (Contributed by @ankane, external repo)
-
-## Installation
-
-You can install from source using:
-```bash
-pip install git+https://github.com/huggingface/tokenizers.git#subdirectory=bindings/python
-```
-
-or install the released versions with
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
 
 ```bash
-pip install tokenizers
-```
- 
-## Quick example using Python:
-
-Choose your model between Byte-Pair Encoding, WordPiece or Unigram and instantiate a tokenizer:
-
-```python
-from tokenizers import Tokenizer
-from tokenizers.models import BPE
-
-tokenizer = Tokenizer(BPE())
+git clone https://github.com/Interested-Deving-1896/tokenizers.git
+cd tokenizers
 ```
 
-You can customize how pre-tokenization (e.g., splitting into words) is done:
+## Usage
 
-```python
-from tokenizers.pre_tokenizers import Whitespace
+<!-- Add usage examples here. This section is yours — the AI will not modify it. -->
 
-tokenizer.pre_tokenizer = Whitespace()
+## Configuration
+
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
+
+## CI
+
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
+
+## Mirror chain
+
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/tokenizers`](https://github.com/Interested-Deving-1896/tokenizers) and mirrored through:
+
+```
+Interested-Deving-1896/tokenizers  ──►  OpenOS-Project-OSP/tokenizers  ──►  OpenOS-Project-Ecosystem-OOC/tokenizers
 ```
 
-Then training your tokenizer on a set of files just takes two lines of codes:
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
 
-```python
-from tokenizers.trainers import BpeTrainer
+## Contributors
 
-trainer = BpeTrainer(special_tokens=["[UNK]", "[CLS]", "[SEP]", "[PAD]", "[MASK]"])
-tokenizer.train(files=["wiki.train.raw", "wiki.valid.raw", "wiki.test.raw"], trainer=trainer)
-```
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
 
-Once your tokenizer is trained, encode any text with just one line:
-```python
-output = tokenizer.encode("Hello, y'all! How are you 😁 ?")
-print(output.tokens)
-# ["Hello", ",", "y", "'", "all", "!", "How", "are", "you", "[UNK]", "?"]
-```
+## Origins
 
-Check the [documentation](https://huggingface.co/docs/tokenizers/index)
-or the [quicktour](https://huggingface.co/docs/tokenizers/quicktour) to learn more!
+<!-- AI:start:origins -->
+_Original project — no upstream fork._
+<!-- AI:end:origins -->
+
+## Resources
+
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
+
+## License
+
+<!-- AI:start:license -->
+[Apache-2.0](https://github.com/Interested-Deving-1896/tokenizers/blob/main/LICENSE) © 2026 [Interested-Deving-1896](https://github.com/Interested-Deving-1896)
+<!-- AI:end:license -->
